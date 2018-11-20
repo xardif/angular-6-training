@@ -1,6 +1,6 @@
-<label> <input type="checkbox" [(ngModel)]="showTable" /> Show table </label>
+<!-- <label> <input type="checkbox" [(ngModel)]="showTable" /> Show table </label> -->
 
-<table class="table table-sm table-bordered table-striped" *paIf="showTable">
+<!-- <table class="table table-sm table-bordered table-striped" *paIf="showTable">
     <tr>
         <th></th>
         <th>Name</th>
@@ -20,4 +20,10 @@
         </td>
         <td [psi-attr]="'bg-info'">{{ item.price }}</td>
     </tr>
-</table>
+</table> -->
+
+<ng-template [paForOf]="getProducts()" let-item>
+    <tr>
+        <td>{{item.name}}</td>
+    </tr>
+</ng-template>
