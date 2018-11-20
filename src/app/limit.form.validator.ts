@@ -6,7 +6,7 @@ export class LimitValidator {
             let val = Number(control.value);
 
             if (val != NaN && val > limit) {
-                return { "limit": { "limit": limit, "actualValue": val } };
+                return { "limit": { "limit": limit, actualValue: val } };
             } else {
                 return null;
             }

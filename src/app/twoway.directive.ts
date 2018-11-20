@@ -12,9 +12,13 @@ import {
 import { Product } from "./product.model";
 
 @Directive({
-    selector: "input[paModel]"
+    selector: "input[paModel]",
+    exportAs: "exportedPaModel"
 })
 export class PaModel {
+
+    direction: string = "None";
+
     @Input("paModel")
     modelProperty: string;
 
@@ -28,12 +32,14 @@ export class PaModel {
     updateValue(newValue: string) {
         this.fieldValue = newValue;
         this.update.emit(newValue);
+        this.direction = "Element";
     }
 
     ngOnChanges(changes: { [property: string]: SimpleChange }) {
         let change = changes["modelProperty"];
         if (change.currentValue != this.fieldValue) {
             this.fieldValue = change.currentValue || "";
+            this.direction = "Model";
         }
     }
 }

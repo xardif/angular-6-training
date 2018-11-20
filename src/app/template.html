@@ -119,4 +119,5 @@
 </div>
 
 <label>Name</label>
-<input class="bg-primary" [(paModel)]="newProduct.name" />
+<input class="bg-primary" [(paModel)]="newProduct.name" #paModel="exportedPaModel"/>
+<div>Direction: {{paModel.direction}}</div>
