@@ -5,7 +5,8 @@ import {
     Input,
     SimpleChange,
     Output,
-    EventEmitter
+    EventEmitter,
+    HostBinding
 } from "@angular/core";
 import { Product } from "./product.model";
 
@@ -23,23 +24,8 @@ export class PsiAttrDirective {
     }
 
     @Input("psi-attr")
+    @HostBinding("class")
     bgClass: string;
-
-    // lifecycle method
-    ngOnChanges(changes: { [property: string]: SimpleChange }) {
-        let change = changes["bgClass"];
-
-        let classList = this.element.nativeElement.classList;
-        if (
-            !change.isFirstChange() &&
-            classList.contains(change.previousValue)
-        ) {
-            classList.remove(change.previousValue);
-        }
-        if (!classList.contains(change.currentValue)) {
-            classList.add(change.currentValue);
-        }
-    }
 
     @Input("psi-product")
     product: Product;
