@@ -6,7 +6,8 @@ import {
     SimpleChange,
     Output,
     EventEmitter,
-    HostBinding
+    HostBinding,
+    HostListener
 } from "@angular/core";
 import { Product } from "./product.model";
 
@@ -15,14 +16,6 @@ import { Product } from "./product.model";
 })
 export class PsiAttrDirective {
 
-    constructor(private element: ElementRef) {
-        this.element.nativeElement.addEventListener("click", e => {
-            if (this.product != null) {
-                this.click.emit(this.product.category);
-            }
-        });
-    }
-
     @Input("psi-attr")
     @HostBinding("class")
     bgClass: string;
@@ -30,7 +23,11 @@ export class PsiAttrDirective {
     @Input("psi-product")
     product: Product;
 
-    // we could raise events using output properties
+    @HostListener("click")
+    triggerCustomEvent() {
+        this.click.emit(this.product.category);
+    }
+
     @Output("psi-category")
     click = new EventEmitter<string>();
 }
