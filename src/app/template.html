@@ -1,31 +1,33 @@
 <style>
-  input.ng-dirty.ng-invalid {
-    border: 2px solid red;
-  }
-  input.ng-dirty.ng-valid {
-    border: 2px solid lightgreen;
-  }
+    input.ng-dirty.ng-invalid {
+        border: 2px solid red;
+    }
+    input.ng-dirty.ng-valid {
+        border: 2px solid lightgreen;
+    }
 </style>
 
 <div>{{ jsonProduct }}</div>
 
 <form #form="ngForm" novalidate (ngSubmit)="submitForm(form)">
-  <input
-    name="name"
-    #name="ngModel"
-    [(ngModel)]="newProduct.name"
-    required
-    minlength="5"
-    pattern="^[A-Za-z]+$"
-  />
-  <!--
-    <ul *ngIf="name.dirty && name.invalid">
-        <li *ngIf="name.errors.required">You have to provide a name</li>
-        <li *ngIf="name.errors.minlength">Min length is {{name.errors.minlength.requiredLength}}</li>
-    </ul>
-  -->
-  <ul *ngIf="name.dirty && name.invalid">
-    <li *ngFor="let error of getValidationMessages(name)">{{ error }}</li>
-  </ul>
-  <button class="btn btn-primary" type="submit">Create</button>
+    <div *ngIf="formSubmitted && form.invalid">
+        <ul>
+            <li *ngFor="let error of getFormValidationMessage(form)">
+                {{ error }}
+            </li>
+        </ul>
+    </div>
+
+    <input
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="newProduct.name"
+        required
+        minlength="5"
+        pattern="^[A-Za-z]+$"
+    />
+    <button 
+    [disabled]="formSubmitted && form.invalid"
+    [class.btn-secondary]="formSubmitted && form.invalid"
+    class="btn btn-primary" type="submit">Create</button>
 </form>

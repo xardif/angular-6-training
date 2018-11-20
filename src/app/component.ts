@@ -172,6 +172,15 @@ export class ProductComponent {
         }
     }
 
+    // error messages at the form level
+    getFormValidationMessage(form:NgForm):string[] {
+        let messages:string[] = [];
+        Object.keys(form.controls).forEach(k => {
+            messages.push(...this.getValidationMessages(form.controls[k], k));
+        });
+        return messages;
+    }
+
     selectedProduct: string;
 
     getSelected(product: Product) {
