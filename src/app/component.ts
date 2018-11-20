@@ -29,6 +29,9 @@ export class ProductComponent {
     submitForm(form: NgForm) {
         this.formSubmitted = true;
         if (form.valid) {
+            this.newProduct.name = this.form.get('name').value;
+            this.newProduct.category = this.form.get('category').value;
+            this.newProduct.price = this.form.get('price').value;        
             this.addProduct(this.newProduct);
             this.newProduct = new Product();
             form.reset();
