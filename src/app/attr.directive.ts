@@ -29,7 +29,7 @@ export class PsiAttrDirective {
         }
         if (!classList.contains(change.currentValue)) {
             this.element.nativeElement.classList.add(
-                change.currentValue || "bg-success"
+                change.currentValue
             );
         }
     }
