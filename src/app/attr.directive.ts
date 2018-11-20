@@ -22,11 +22,11 @@ export class PsiAttrDirective {
     @Input("psi-product")
     product: Product;
 
+    @Output("psi-category")
+    click = new EventEmitter<string>();
+
     @HostListener("click")
     triggerCustomEvent() {
         if (this.product != null) this.click.emit(this.product.category);
     }
-
-    @Output("psi-category")
-    click = new EventEmitter<string>();
 }
