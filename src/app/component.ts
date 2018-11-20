@@ -67,4 +67,5 @@ illegal characters`);
 
         return messages;
     }
+    showTable: boolean = true;
 }
