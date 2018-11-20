@@ -1,12 +1,12 @@
-import {Directive,ElementRef} from "@angular/core"
+import {Directive,ElementRef,Attribute} from "@angular/core"
 
 @Directive({
     selector:"[psi-attr]"
 })
 export class PsiAttrDirective {
 
-    constructor(ref: ElementRef) {
-        ref.nativeElement.classList.add("bg-danger");
+    constructor(ref: ElementRef, @Attribute("psi-attr-class") bgClass: string) {
+        ref.nativeElement.classList.add(bgClass);
     }
 
 }
