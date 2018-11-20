@@ -5,7 +5,7 @@ import {Directive,ElementRef,Attribute} from "@angular/core"
 })
 export class PsiAttrDirective {
 
-    constructor(ref: ElementRef, @Attribute("psi-attr-class") bgClass: string) {
+    constructor(ref: ElementRef, @Attribute("psi-attr") bgClass: string) {
         ref.nativeElement.classList.add(bgClass);
     }
 
