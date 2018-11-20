@@ -181,7 +181,7 @@
 -->
 
 <!-- 2 way bindings -->
-<div>
+<!-- <div>
   <label>Product name</label>
   <input
     (input)="selectedProduct = $event.target.value"
@@ -194,4 +194,13 @@
     (input)="selectedProduct = $event.target.value"
     [value]="selectedProduct || ''"
   />
+</div> -->
+
+<div>
+  <label>Product name</label>
+  <input [(ngModel)]="selectedProduct" />
+</div>
+<div>
+  <label>Product name</label>
+  <input [(ngModel)]="selectedProduct" />
 </div>
