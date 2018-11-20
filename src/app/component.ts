@@ -116,6 +116,16 @@ export class ProductComponent {
     return this.model.getProducts();
   }
 
+  // to support adding new product
+  newProduct: Product = new Product();
+  get jsonProduct() {
+    return JSON.stringify(this.newProduct);
+  }
+
+  addProduct(p:Product) {
+    console.log("New product " + this.jsonProduct);
+  }
+
   selectedProduct:string;
 
   getSelected(product: Product) {
