@@ -1,9 +1,26 @@
-<div>
-  {{ jsonProduct }}
-</div>
+<style>
+  input.ng-dirty.ng-invalid {
+    border: 2px solid red;
+  }
+  input.ng-dirty.ng-valid {
+    border: 2px solid lightgreen;
+  }
+</style>
 
-<div>
-  <input [(ngModel)]="newProduct.name"/>
-  <input [(ngModel)]="newProduct.category"/>
-  <input [(ngModel)]="newProduct.price"/>
-</div>
+<div>{{ jsonProduct }}</div>
+
+<form novalidate (ngSubmit)="addProduct(newProduct)">
+  <input
+    name="name"
+    #name="ngModel"
+    [(ngModel)]="newProduct.name"
+    required
+    minlength="5"
+    pattern="^[A-Za-z]+$"
+  />
+  <ul *ngIf="name.dirty && name.invalid">
+      <li *ngIf="name.errors.required">You have to provide a name</li>
+      <li *ngIf="name.errors.minlength">Min length is {{name.errors.minlength.requiredLength}}</li>
+  </ul>
+  <button class="btn btn-primary" type="submit">Create</button>
+</form>
