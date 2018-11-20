@@ -15,7 +15,6 @@ import { Product } from "./product.model";
     selector: "[psi-attr]"
 })
 export class PsiAttrDirective {
-
     @Input("psi-attr")
     @HostBinding("class")
     bgClass: string;
@@ -25,7 +24,7 @@ export class PsiAttrDirective {
 
     @HostListener("click")
     triggerCustomEvent() {
-        this.click.emit(this.product.category);
+        if (this.product != null) this.click.emit(this.product.category);
     }
 
     @Output("psi-category")
