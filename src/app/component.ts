@@ -97,7 +97,6 @@
 
 // }
 
-
 import { Component } from "@angular/core";
 import { Model } from "./repository.model";
 import { Product } from "./product.model";
@@ -122,14 +121,42 @@ export class ProductComponent {
     return JSON.stringify(this.newProduct);
   }
 
-  addProduct(p:Product) {
+  addProduct(p: Product) {
     console.log("New product " + this.jsonProduct);
   }
 
-  selectedProduct:string;
-
-  getSelected(product: Product) {
-      return product.name == this.selectedProduct;
+  // central point for error messages for specific fields
+  getValidationMessages(state: any, thingName?: string) {
+    let thing = state.path || thingName;
+    let messages: string[] = [];
+    if (state.errors) {
+      for (let errorName in state.errors) {
+        switch (errorName) {
+          case "required": {
+            messages.push(`You must enter a ${thing}.`);
+            break;
+          }
+          case "minlength": {
+            messages.push(
+              `Length of ${thing} should be at least ${state.errors[errorName].requiredLength}.`
+            );
+            break;
+          }
+          case "pattern": {
+            messages.push(
+              `${thing} should match ${state.errors[errorName].requiredPattern}.`
+            );
+            break;
+          }
+        }
+      }
+    }
+    return messages;
   }
 
+  selectedProduct: string;
+
+  getSelected(product: Product) {
+    return product.name == this.selectedProduct;
+  }
 }

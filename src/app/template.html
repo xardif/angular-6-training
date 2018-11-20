@@ -18,9 +18,14 @@
     minlength="5"
     pattern="^[A-Za-z]+$"
   />
+  <!--
+    <ul *ngIf="name.dirty && name.invalid">
+        <li *ngIf="name.errors.required">You have to provide a name</li>
+        <li *ngIf="name.errors.minlength">Min length is {{name.errors.minlength.requiredLength}}</li>
+    </ul>
+  -->
   <ul *ngIf="name.dirty && name.invalid">
-      <li *ngIf="name.errors.required">You have to provide a name</li>
-      <li *ngIf="name.errors.minlength">Min length is {{name.errors.minlength.requiredLength}}</li>
+    <li *ngFor="let error of getValidationMessages(name)">{{ error }}</li>
   </ul>
   <button class="btn btn-primary" type="submit">Create</button>
 </form>
