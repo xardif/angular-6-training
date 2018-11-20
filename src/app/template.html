@@ -9,7 +9,7 @@
 
 <div>{{ jsonProduct }}</div>
 
-<form novalidate (ngSubmit)="addProduct(newProduct)">
+<form #form="ngForm" novalidate (ngSubmit)="submitForm(form)">
   <input
     name="name"
     #name="ngModel"
