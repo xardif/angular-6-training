@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { Transform } from "stream";
 
 @Pipe({
-    name: "addTax"
+    name: "addTax",
+    pure: false
 })
 export class PaAddTaxPipe implements PipeTransform {
     defaultRate: number = 10;

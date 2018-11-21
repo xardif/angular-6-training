@@ -9,8 +9,6 @@ import { DiscountService } from "./discount.service";
 })
 export class ProductTableComponent {
 
-    constructor(private discounter: DiscountService){}
-    
     // we receive from the parent component the array of products
     @Input("model")
     dataModel: Model;

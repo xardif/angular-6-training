@@ -56,7 +56,7 @@
         <td>{{ i }}</td>
         <td>{{ item.name | uppercase }}</td>
         <td>{{ item.category | lowercase }}</td>
-        <td>{{ discounter.applyDiscount(item.price) | currency: "USD":"symbol" }}</td>
+        <td>{{ item.price | discount | currency: "USD":"symbol" }}</td>
         <td>
             <button class="btn btn-danger" (click)="deleteProduct(item.id)">
                 Remove
