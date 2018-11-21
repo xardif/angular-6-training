@@ -1,4 +1,21 @@
+<div>
+{{ dateObject | date }}<br/>
+{{ dateString | date }}<br/>
+{{ dateNumber | date }}<br/>
+<br/>
+{{ dateObject | date:"shortDate" }} <br/>
+{{ dateObject | date:"mediumDate" }}<br/>
+{{ dateObject | date:"longDate" }}<br/>
+<br/>
+{{ dateObject | date:"yy dd M MM MMM" }}<br/>
+</div>
+
 <label>Tax rate:</label>
+<select [value]="taxRate || 0" (change)="taxRate = $event.target.value">
+    <option *ngFor="let i of [0, 0.4, 0.6, 0.8, 1]" [value]="i * 100">{{
+        i | percent
+    }}</option>
+</select>
 <select [value]="taxRate || 0" (change)="taxRate = $event.target.value">
     <option *ngFor="let i of [0, 40, 60, 80, 100]" [value]="i">{{
         i
@@ -25,12 +42,8 @@
         <td>
             {{ item.price | addTax: taxRate || 0 | currency: "GBP":"symbol" }}
         </td>
-        <td>
-            {{ item.price | number:"3.2-2" }}
-        </td>
-        <td>
-            {{ item.price | currency:"USD":"symbol":"3.3-3" }}
-        </td>
+        <td>{{ item.price | number: "3.2-2" }}</td>
+        <td>{{ item.price | currency: "USD":"symbol":"3.3-3" }}</td>
         <td>
             <button class="btn btn-danger" (click)="deleteProduct(item.id)">
                 Remove

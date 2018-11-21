@@ -24,4 +24,9 @@ export class ProductTableComponent {
     deleteProduct(key: number) {
         this.dataModel.deleteProduct(key);
     }
+
+    // to verify date pipe
+    dateObject: Date = new Date(2020, 1, 20);
+    dateString: string = "2020-02-20T00:00:00.000Z"
+    dateNumber: number = 123412341;
 }
