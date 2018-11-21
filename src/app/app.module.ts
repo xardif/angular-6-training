@@ -10,11 +10,12 @@ import { PaStrctureDirective } from './structure.directive';
 import { PaIteratorDirective } from './iterator.directive';
 import { ProductFormComponent } from './productForm.component';
 import { ProductTableComponent } from './productTable.component';
+import { PaToggleView } from './toggleView.component';
 
 @NgModule({
   declarations: [
     ProductComponent, PsiAttrDirective, PaModel, PaStrctureDirective, PaIteratorDirective,
-    ProductFormComponent, ProductTableComponent
+    ProductFormComponent, ProductTableComponent, PaToggleView
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
