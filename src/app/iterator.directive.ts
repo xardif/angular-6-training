@@ -54,9 +54,7 @@ export class PaIteratorDirective {
                 this.views.set(addition.trackById, context);
             });
 
-            let removed = false;
             changes.forEachRemovedItem(removal => {
-                removed = true;
                 let context = this.views.get(removal.trackById);
                 this.views.delete(removal.trackById);
                 this.container.remove(this.container.indexOf(context.view));
