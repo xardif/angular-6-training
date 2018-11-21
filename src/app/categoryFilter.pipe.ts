@@ -7,6 +7,6 @@ import { Product } from "./product.model";
 })
 export class PaCategoryFilterPipe implements PipeTransform {
     transform(products: Product[], category: string): Product[] {
-        return category == undefined ? products : products.filter(p => p.category == category);
+        return category == undefined || category == '' ? products : products.filter(p => p.category == category);
     }
 }
