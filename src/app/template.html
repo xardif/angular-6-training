@@ -1,2 +1,4 @@
-<div><paProductForm></paProductForm></div>
-<div><paProductTable [model]="model"></paProductTable></div>
+<div><paProductForm (paNewProduct)="addProduct($event)"></paProductForm></div>
+<div><paProductTable [model]="model">
+    
+</paProductTable></div>

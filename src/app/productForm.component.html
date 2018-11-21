@@ -1,0 +1,7 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)" novalidate>
+    <label>Name</label>
+    <input [(ngModel)]="newProduct.name" name="name"/>
+    <input [(ngModel)]="newProduct.category" name="category"/>
+    <input [(ngModel)]="newProduct.price" name="price"/>
+    <button type="submit">Create</button>
+</form>
