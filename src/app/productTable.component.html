@@ -26,6 +26,12 @@
             {{ item.price | addTax: taxRate || 0 | currency: "GBP":"symbol" }}
         </td>
         <td>
+            {{ item.price | number:"3.2-2" }}
+        </td>
+        <td>
+            {{ item.price | currency:"USD":"symbol":"3.3-3" }}
+        </td>
+        <td>
             <button class="btn btn-danger" (click)="deleteProduct(item.id)">
                 Remove
             </button>
