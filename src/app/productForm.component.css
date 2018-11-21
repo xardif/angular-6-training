@@ -1,0 +1,5 @@
+div { background: red; }
+
+:host:hover {
+    font-size: 30px;
+}
