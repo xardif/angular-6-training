@@ -1,4 +1,9 @@
-<div>
+
+<paDiscountDisplay [discounter]="discounter"></paDiscountDisplay>
+<paDiscountEditor [discounter]="discounter"></paDiscountEditor>
+
+<br/><br/>
+<!-- <div>
     {{ dateObject | date }}<br />
     {{ dateString | date }}<br />
     {{ dateNumber | date }}<br />
@@ -8,7 +13,7 @@
     {{ dateObject | date: "longDate" }}<br />
     <br />
     {{ dateObject | date: "yy dd M MM MMM" }}<br />
-</div>
+</div> -->
 
 <label>Tax rate:</label>
 <select [value]="taxRate || 0" (change)="taxRate = $event.target.value">
@@ -48,11 +53,7 @@
         <td>{{ i }}</td>
         <td>{{ item.name | uppercase }}</td>
         <td>{{ item.category | lowercase }}</td>
-        <td>
-            {{ item.price | addTax: taxRate || 0 | currency: "GBP":"symbol" }}
-        </td>
-        <td>{{ item.price | number: "3.2-2" }}</td>
-        <td>{{ item.price | currency: "USD":"symbol":"3.3-3" }}</td>
+        <td>{{ item.price | currency: "USD":"symbol" }}</td>
         <td>
             <button class="btn btn-danger" (click)="deleteProduct(item.id)">
                 Remove

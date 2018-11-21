@@ -13,11 +13,14 @@ import { ProductTableComponent } from './productTable.component';
 import { PaToggleView } from './toggleView.component';
 import { PaAddTaxPipe } from './addTax.pipe';
 import { PaCategoryFilterPipe } from './categoryFilter.pipe';
+import { PaDiscountDisplayComponent } from './discountDisplay.component';
+import { PaDiscountEditorComponent } from './discountEditor.component';
 
 @NgModule({
   declarations: [
     ProductComponent, PsiAttrDirective, PaModel, PaStrctureDirective, PaIteratorDirective,
-    ProductFormComponent, ProductTableComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe
+    ProductFormComponent, ProductTableComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe,
+    PaDiscountDisplayComponent, PaDiscountEditorComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
