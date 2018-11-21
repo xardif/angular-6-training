@@ -15,6 +15,7 @@ import { PaAddTaxPipe } from './addTax.pipe';
 import { PaCategoryFilterPipe } from './categoryFilter.pipe';
 import { PaDiscountDisplayComponent } from './discountDisplay.component';
 import { PaDiscountEditorComponent } from './discountEditor.component';
+import { DiscountService } from './discount.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { PaDiscountEditorComponent } from './discountEditor.component';
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DiscountService],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }

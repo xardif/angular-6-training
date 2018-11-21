@@ -8,7 +8,5 @@ import { DiscountService } from "./discount.service";
 })
 export class PaDiscountEditorComponent {
 
-    @Input("discounter")
-    discounter: DiscountService;
-
+    constructor(private discounter: DiscountService){}
 }
