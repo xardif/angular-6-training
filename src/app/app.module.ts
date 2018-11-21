@@ -26,7 +26,7 @@ import { DiscountService } from './discount.service';
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [DiscountService],
+  providers: [],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
