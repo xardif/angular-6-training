@@ -1,13 +1,13 @@
 <div>
-{{ dateObject | date }}<br/>
-{{ dateString | date }}<br/>
-{{ dateNumber | date }}<br/>
-<br/>
-{{ dateObject | date:"shortDate" }} <br/>
-{{ dateObject | date:"mediumDate" }}<br/>
-{{ dateObject | date:"longDate" }}<br/>
-<br/>
-{{ dateObject | date:"yy dd M MM MMM" }}<br/>
+    {{ dateObject | date }}<br />
+    {{ dateString | date }}<br />
+    {{ dateNumber | date }}<br />
+    <br />
+    {{ dateObject | date: "shortDate" }} <br />
+    {{ dateObject | date: "mediumDate" }}<br />
+    {{ dateObject | date: "longDate" }}<br />
+    <br />
+    {{ dateObject | date: "yy dd M MM MMM" }}<br />
 </div>
 
 <label>Tax rate:</label>
@@ -29,16 +29,25 @@
     >
 </select>
 
+<label>Number of products:</label>
+<select [value]="itemCount || 1" (change)="itemCount = $event.target.value">
+    <option *ngFor="let p of getProducts(); let i = index" [value]="i + 1">{{
+        i + 1
+    }}</option>
+</select>
+
+<div>{{ getProducts() | json }}</div>
+
 <table>
     <tr
         *paFor="
-            let item of (getProducts() | filter: categoryFilter);
+            let item of (getProducts() | filter: categoryFilter | slice:0:itemCount || 1);
             let i = index
         "
     >
         <td>{{ i }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.category }}</td>
+        <td>{{ item.name | uppercase }}</td>
+        <td>{{ item.category | lowercase }}</td>
         <td>
             {{ item.price | addTax: taxRate || 0 | currency: "GBP":"symbol" }}
         </td>

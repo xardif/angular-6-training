@@ -8,8 +8,6 @@ import { Product } from "./product.model";
 })
 export class ProductTableComponent {
 
-    categoryFilter: string = "Soccer";
-
     // we receive from the parent component the array of products
     @Input("model")
     dataModel: Model;
