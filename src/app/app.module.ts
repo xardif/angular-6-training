@@ -8,10 +8,13 @@ import { PsiAttrDirective } from './attr.directive';
 import { PaModel } from './twoway.directive';
 import { PaStrctureDirective } from './structure.directive';
 import { PaIteratorDirective } from './iterator.directive';
+import { ProductFormComponent } from './productForm.component';
+import { ProductTableComponent } from './productTable.component';
 
 @NgModule({
   declarations: [
-    ProductComponent, PsiAttrDirective, PaModel, PaStrctureDirective, PaIteratorDirective
+    ProductComponent, PsiAttrDirective, PaModel, PaStrctureDirective, PaIteratorDirective,
+    ProductFormComponent, ProductTableComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
