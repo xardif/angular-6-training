@@ -11,11 +11,12 @@ import { PaIteratorDirective } from './iterator.directive';
 import { ProductFormComponent } from './productForm.component';
 import { ProductTableComponent } from './productTable.component';
 import { PaToggleView } from './toggleView.component';
+import { PaAddTaxPipe } from './addTax.pipe';
 
 @NgModule({
   declarations: [
     ProductComponent, PsiAttrDirective, PaModel, PaStrctureDirective, PaIteratorDirective,
-    ProductFormComponent, ProductTableComponent, PaToggleView
+    ProductFormComponent, ProductTableComponent, PaToggleView, PaAddTaxPipe
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
