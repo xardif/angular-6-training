@@ -1,1 +1,9 @@
-<div class="bg-info">This is an external template</div>
+<table>
+    <tr *paFor="let item of getProducts(); let i=index;">
+        <td>{{ i }}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.price}}</td>
+            <td><button class="btn btn-danger" (click)="deleteProduct(item.id)">Remove</button></td>
+    </tr>
+</table>
