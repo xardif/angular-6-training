@@ -68,4 +68,8 @@ illegal characters`);
         return messages;
     }
     showTable: boolean = true;
+
+    deleteProduct(key: number) {
+        this.model.deleteProduct(key);
+    }
 }

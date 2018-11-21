@@ -125,6 +125,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.category }}</td>
             <td>{{ item.price }}</td>
+            <td><button class="btn btn-danger" (click)="deleteProduct(item.id)">Remove</button></td>
         </tr>
     </table>
 </div>
