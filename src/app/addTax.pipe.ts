@@ -7,9 +7,9 @@ import { Transform } from "stream";
 export class PaAddTaxPipe implements PipeTransform {
     defaultRate: number = 10;
 
-    transform(value: any, rate?: number): number {
+    transform(value: any, rate?: any): number {
         let valueNumber = Number(value);
-        let rateNumber = rate == undefined ? this.defaultRate : rate;
+        let rateNumber = rate == undefined ? this.defaultRate : Number(rate);
         return valueNumber + valueNumber * (rateNumber / 100);
     }
 }
