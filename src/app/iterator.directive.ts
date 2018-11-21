@@ -16,7 +16,7 @@ import { ViewRef } from "@angular/core/src/render3/view_ref";
 })
 export class PaIteratorDirective {
     private differ: IterableDiffer<any>;
-    private views: Map<string, ViewRef> = new Map<string, ViewRef>();
+    private views: Map<string, PaIteratorContext> = new Map<string, PaIteratorContext>();
 
     constructor(
         private container: ViewContainerRef,
