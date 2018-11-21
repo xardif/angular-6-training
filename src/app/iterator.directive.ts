@@ -53,14 +53,22 @@ export class PaIteratorDirective {
                 );
                 this.views.set(addition.trackById, context);
             });
+
+            let removed = false;
             changes.forEachRemovedItem(removal => {
+                removed = true;
                 let context = this.views.get(removal.trackById);
-                this.views.delete(context);
+                this.views.delete(removal.trackById);
                 this.container.remove(this.container.indexOf(context.view));
             });
-            changes.forEachMovedItem(moved => {
-                let context = this.views.get(moved.trackById);
-                context.setData(moved.currentIndex, this.dataSource.length);
+            // changes.forEachMovedItem(moved => {
+            //     let context = this.views.get(moved.trackById);
+            //     context.setData(moved.currentIndex, this.dataSource.length);
+            // });
+            let index = 0;
+            let size = this.dataSource.length;
+            this.views.forEach( (v,k) => {
+                v.setData(index++, size);
             });
         }
     }
