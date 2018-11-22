@@ -1,5 +1,9 @@
 import {Product} from "./product.model"
+import { Injectable } from "@angular/core";
 
+@Injectable({
+    providedIn: 'root'
+})
 export class SimpleDataSource {
 
     private data:Product[];
