@@ -24,15 +24,12 @@ export class PaDiscountAmountDirective {
     differ: KeyValueDiffer<any, any>;
 
     discountAmount: number;
-    logger: LogService;
 
     constructor(
         private discounter: DiscountService,
         private keyValueDiffers: KeyValueDiffers,
-        @Inject(LOG_SERVICE) private loggers: LogService[]
-    ) {
-        this.logger = this.loggers.find(l => l.minLogLevel == LogLevel.DEBUG);
-    }
+        private logger: LogService
+    ) {}
 
     @Input("pa-price")
     originalPrice: number;
