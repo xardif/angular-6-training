@@ -10,7 +10,7 @@ export class DiscountService {
         return this.discountValue;
     }
 
-    public set discount(newValue: number): number {
+    public set discount(newValue: number) {
         this.discountValue = newValue;
     }
 
