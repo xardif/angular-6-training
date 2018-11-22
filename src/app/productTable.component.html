@@ -1,21 +1,3 @@
-<paDiscountDisplay></paDiscountDisplay>
-<paDiscountEditor></paDiscountEditor>
-
-<br /><br />
-<!--
-    <div>
-        {{ dateObject | date }}<br />
-        {{ dateString | date }}<br />
-        {{ dateNumber | date }}<br />
-        <br />
-        {{ dateObject | date: "shortDate" }} <br />
-        {{ dateObject | date: "mediumDate" }}<br />
-        {{ dateObject | date: "longDate" }}<br />
-        <br />
-        {{ dateObject | date: "yy dd M MM MMM" }}<br />
-    </div>
--->
-
 <label>Tax rate:</label>
 <select [value]="taxRate || 0" (change)="taxRate = $event.target.value">
     <option *ngFor="let i of [0, 0.4, 0.6, 0.8, 1]" [value]="i * 100">{{

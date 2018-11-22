@@ -64,6 +64,6 @@ import {
             }
         }
     ],
-    bootstrap: [ProductComponent]
+    bootstrap: [ProductFormComponent, ProductTableComponent]
 })
 export class AppModule {}
