@@ -45,9 +45,10 @@ import {
     imports: [BrowserModule, FormsModule, ReactiveFormsModule],
     providers: [
         { provide: LOG_LEVEL, useValue: LogLevel.DEBUG },
+        { provide: "debugLevel", useExisting: LOG_LEVEL },
         {
             provide: LogService,
-            deps: [LOG_LEVEL],
+            deps: ["debugLevel"],
             useFactory: level => {
                 let logger = new LogService();
                 logger.minLogLevel = level;
