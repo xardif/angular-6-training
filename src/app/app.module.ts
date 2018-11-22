@@ -17,7 +17,7 @@ import { PaDiscountDisplayComponent } from "./discountDisplay.component";
 import { PaDiscountEditorComponent } from "./discountEditor.component";
 import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
-import { LogService, LOG_SERVICE } from "./log.service";
+import { LogService, LOG_SERVICE, SpecialLogService } from "./log.service";
 
 @NgModule({
     declarations: [
@@ -40,7 +40,7 @@ import { LogService, LOG_SERVICE } from "./log.service";
     providers: [
         {
             provide: LOG_SERVICE,
-            useClass: LogService
+            useClass: SpecialLogService
         }
     ],
     bootstrap: [ProductComponent]
