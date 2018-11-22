@@ -29,6 +29,7 @@ import {
     PaValueDisplayDirective,
     VALUE_SERVICE
 } from "./valueDisplay.directive";
+import { ModelModule } from "./model/model.module";
 
 @NgModule({
     declarations: [
@@ -49,7 +50,7 @@ import {
         PaCellColorSwitchesDirective,
         PaValueDisplayDirective
     ],
-    imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+    imports: [BrowserModule, FormsModule, ReactiveFormsModule, ModelModule],
     providers: [
         { provide: VALUE_SERVICE, useValue: "Apples" },
         { provide: LOG_LEVEL, useValue: LogLevel.DEBUG },

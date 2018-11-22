@@ -1,11 +1,13 @@
 import { Product } from "./product.model";
 import { SimpleDataSource } from "./datasource.model";
 import { Injectable } from "@angular/core";
+import { ModelModule } from "./model.module";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: ModelModule
 })
-export class Model {]
+// @Injectable()
+export class Model {
   private products: Product[];
   private locator = (p: Product, id: number) => p.id == id;
 

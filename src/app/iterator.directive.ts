@@ -8,7 +8,7 @@ import {
     IterableDiffers,
     ChangeDetectorRef
 } from "@angular/core";
-import { Product } from "./product.model";
+import { Product } from "./model/product.model";
 import { ViewRef } from "@angular/core/src/render3/view_ref";
 
 @Directive({

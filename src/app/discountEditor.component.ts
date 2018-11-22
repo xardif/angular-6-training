@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, Input } from "@angular/core";
-import { Product } from "./product.model";
+import { Product } from "./model/product.model";
 import { DiscountService } from "./discount.service";
 
 @Component({

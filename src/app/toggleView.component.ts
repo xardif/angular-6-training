@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from "@angular/core";
-import { Product } from "./product.model";
+import { Product } from "./model/product.model";
 
 @Component({
     selector: "paToggleView",
