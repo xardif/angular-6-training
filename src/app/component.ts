@@ -7,8 +7,8 @@ import { Product } from "./product.model";
     templateUrl: "template.html"
 })
 export class ProductComponent {
-    constructor(private model: Model) {}
-    addProduct(p: Product) {
-        this.model.saveProduct(p);
-    }
+    // constructor(private model: Model) {}
+    // addProduct(p: Product) {
+    //     this.model.saveProduct(p);
+    // }
 }

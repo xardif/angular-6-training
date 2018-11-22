@@ -9,9 +9,7 @@ import { DiscountService } from "./discount.service";
 })
 export class ProductTableComponent {
 
-    // we receive from the parent component the array of products
-    @Input("model")
-    dataModel: Model;
+    constructor(private dataModel: Model){}
 
     getProduct(key: number): Product {
         return this.dataModel.getProduct(key);
