@@ -7,6 +7,7 @@ export enum LogLevel {
 }
 
 export const LOG_SERVICE = new InjectionToken("logger");
+export const LOG_LEVEL = new InjectionToken("log_level");
 
 @Injectable()
 // @Injectable({

@@ -17,7 +17,13 @@ import { PaDiscountDisplayComponent } from "./discountDisplay.component";
 import { PaDiscountEditorComponent } from "./discountEditor.component";
 import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
-import { LogService, LOG_SERVICE, SpecialLogService, LogLevel } from "./log.service";
+import {
+    LogService,
+    LOG_SERVICE,
+    LOG_LEVEL,
+    SpecialLogService,
+    LogLevel
+} from "./log.service";
 
 @NgModule({
     declarations: [
@@ -37,14 +43,17 @@ import { LogService, LOG_SERVICE, SpecialLogService, LogLevel } from "./log.serv
         PaDiscountAmountDirective
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule],
-    providers: [{
-      provide: LogService,
-      useFactory: () => {
-        let logger = new LogService();
-        logger.minLogLevel = LogLevel.DEBUG;
-        return logger;
-      }
-    }
+    providers: [
+        { provide: LOG_LEVEL, useValue: LogLevel.DEBUG },
+        {
+            provide: LogService,
+            deps: [LOG_LEVEL],
+            useFactory: level => {
+                let logger = new LogService();
+                logger.minLogLevel = level;
+                return logger;
+            }
+        }
     ],
     bootstrap: [ProductComponent]
 })
