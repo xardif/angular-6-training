@@ -6,5 +6,5 @@ import { DiscountService } from "./../common/discount.service";
     template: "The discount is {{ discounter.discount }}"
 })
 export class PaDiscountDisplayComponent {
-    constructor(private discounter: DiscountService) {}
+    constructor(public discounter: DiscountService) {}
 }

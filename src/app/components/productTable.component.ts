@@ -8,6 +8,10 @@ import { Product } from "./../model/product.model";
 })
 export class ProductTableComponent {
 
+    taxRate: number = 0;
+    categoryFilter: string;
+    itemCount: number = 5;
+
     constructor(private dataModel: Model){}
 
     getProduct(key: number): Product {

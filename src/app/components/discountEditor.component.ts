@@ -7,5 +7,5 @@ import { DiscountService } from "./../common/discount.service";
         "<input [(ngModel)]='discounter.discount' type='text' name='discount'/>"
 })
 export class PaDiscountEditorComponent {
-    constructor(private discounter: DiscountService) {}
+    constructor(public discounter: DiscountService) {}
 }

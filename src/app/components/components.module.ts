@@ -24,6 +24,6 @@ import { CommonModule } from "../common/common.module";
         PaDiscountDisplayComponent,
         PaDiscountEditorComponent
     ],
-    exports: [ProductFormComponent, ProductTableComponent]
+    exports: [ProductFormComponent, ProductTableComponent, PaToggleView]
 })
 export class ComponentsModule {}

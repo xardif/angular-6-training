@@ -45,7 +45,7 @@ export class PaIteratorDirective {
                     addition.currentIndex,
                     this.dataSource.length
                 );
-                context.view = this.container.createEmbeddedView(
+                context.view = <any>this.container.createEmbeddedView(
                     this.template,
                     context
                 );
@@ -102,7 +102,7 @@ class PaIteratorContext {
     first: boolean;
     last: boolean;
 
-    view: ViewRef;
+    view: ViewRef<any>;
 
     constructor(public $implicit: any, public index: number, total: number) {
         this.setData(index, total);
