@@ -25,6 +25,10 @@ import {
     LogLevel
 } from "./log.service";
 import { PaCellColorSwitchesDirective } from "./cellColorSwitches.directive";
+import {
+    PaValueDisplayDirective,
+    VALUE_SERVICE
+} from "./valueDisplay.directive";
 
 @NgModule({
     declarations: [
@@ -42,10 +46,12 @@ import { PaCellColorSwitchesDirective } from "./cellColorSwitches.directive";
         PaDiscountEditorComponent,
         PaDiscountPipe,
         PaDiscountAmountDirective,
-        PaCellColorSwitchesDirective
+        PaCellColorSwitchesDirective,
+        PaValueDisplayDirective
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule],
     providers: [
+        { provide: VALUE_SERVICE, useValue: "Apples" },
         { provide: LOG_LEVEL, useValue: LogLevel.DEBUG },
         { provide: "debugLevel", useExisting: LOG_LEVEL },
         {
