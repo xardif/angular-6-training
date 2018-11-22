@@ -25,8 +25,7 @@ import { LogService, LOG_SERVICE, LogLevel, SpecialLogService } from "./log.serv
 })
 export class PaCellColorSwitchesDirective {
 
-
-    export static createLogger(): LogService {
+    static createLogger(): LogService {
         let logger = new SpecialLogService();
         return logger;
     }
