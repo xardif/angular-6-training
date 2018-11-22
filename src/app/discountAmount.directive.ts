@@ -13,6 +13,7 @@ import {
 import { Product } from "./product.model";
 import { ViewRef } from "@angular/core/src/render3/view_ref";
 import { DiscountService } from "./discount.service";
+import { LogService } from "./log.service";
 
 @Directive({
     selector: "td[pa-price]",
@@ -25,7 +26,8 @@ export class PaDiscountAmountDirective {
 
     constructor(
         private discounter: DiscountService,
-        private keyValueDiffers: KeyValueDiffers
+        private keyValueDiffers: KeyValueDiffers,
+        private logger: LogService
     ) {}
 
     @Input("pa-price")
@@ -36,6 +38,7 @@ export class PaDiscountAmountDirective {
     }
 
     ngDoCheck() {
+        this.logger.logInfoMessage("ngDoCheck");
         if (this.differ.diff(this.discounter)) {
             this.updateValue();
         }

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform, Optional } from "@angular/core";
 import { DiscountService } from "./discount.service";
 
 @Pipe({
@@ -6,7 +6,6 @@ import { DiscountService } from "./discount.service";
     pure: false
 })
 export class PaDiscountPipe implements PipeTransform {
-
     
     constructor(private discounter: DiscountService){}
 
