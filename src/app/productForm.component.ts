@@ -7,7 +7,8 @@ import { VALUE_SERVICE } from "./valueDisplay.directive";
     selector: "paProductForm",
     templateUrl: "./productForm.component.html",
     styleUrls: ["productForm.component.css"],
-    providers: [{ provide: VALUE_SERVICE, useValue: "Windows" }]
+    // providers: [{ provide: VALUE_SERVICE, useValue: "Windows" }]
+    viewProviders: [{ provide: VALUE_SERVICE, useValue: "Windows" }]
 })
 export class ProductFormComponent {
     newProduct: Product = new Product();
