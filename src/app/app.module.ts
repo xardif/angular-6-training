@@ -17,6 +17,7 @@ import { PaDiscountDisplayComponent } from './discountDisplay.component';
 import { PaDiscountEditorComponent } from './discountEditor.component';
 import { PaDiscountPipe } from './discount.pipe';
 import { PaDiscountAmountDirective } from './discountAmount.directive';
+import { LogService } from './log.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { PaDiscountAmountDirective } from './discountAmount.directive';
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: "logger", useClass: LogService
+  }],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }

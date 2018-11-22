@@ -5,10 +5,10 @@ export enum LogLevel {
     INFO,
     ERROR
 }
-
-@Injectable({
-    providedIn: "root"
-})
+@Injectable()
+// @Injectable({
+//     providedIn: "root"
+// })
 export class LogService {
     minLogLevel: LogLevel = LogLevel.INFO;
 

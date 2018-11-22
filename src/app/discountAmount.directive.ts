@@ -8,7 +8,8 @@ import {
     IterableDiffers,
     ChangeDetectorRef,
     KeyValueDiffers,
-    KeyValueDiffer
+    KeyValueDiffer,
+    Inject
 } from "@angular/core";
 import { Product } from "./product.model";
 import { ViewRef } from "@angular/core/src/render3/view_ref";
@@ -27,7 +28,7 @@ export class PaDiscountAmountDirective {
     constructor(
         private discounter: DiscountService,
         private keyValueDiffers: KeyValueDiffers,
-        private logger: LogService
+        @Inject("logger") private logger: LogService
     ) {}
 
     @Input("pa-price")
