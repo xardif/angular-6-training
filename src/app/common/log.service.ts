@@ -1,4 +1,4 @@
-import { Injectable, InjectionToken, Injectable } from "@angular/core";
+import { Injectable, InjectionToken } from "@angular/core";
 
 export enum LogLevel {
     DEBUG,

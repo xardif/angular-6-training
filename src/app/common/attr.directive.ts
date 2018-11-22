@@ -9,7 +9,7 @@ import {
     HostBinding,
     HostListener
 } from "@angular/core";
-import { Product } from "./model/product.model";
+import { Product } from "./../model/product.model";
 
 @Directive({
     selector: "[psi-attr]"

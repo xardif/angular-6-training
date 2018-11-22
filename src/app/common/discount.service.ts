@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Injectable({
-    providedIn: "root"
+    providedIn: CommonModule
 })
 export class DiscountService {
     private discountValue: number = 10;

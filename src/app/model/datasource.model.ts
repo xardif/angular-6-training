@@ -2,10 +2,7 @@ import { Product } from "./product.model";
 import { Injectable } from "@angular/core";
 import { ModelModule } from "./model.module";
 
-@Injectable({
-    providedIn: ModelModule
-})
-// @Injectable()
+@Injectable()
 export class SimpleDataSource {
     private data: Product[];
 

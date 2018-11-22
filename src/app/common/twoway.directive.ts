@@ -9,7 +9,6 @@ import {
     HostBinding,
     HostListener
 } from "@angular/core";
-import { Product } from "./model/product.model";
 
 @Directive({
     selector: "input[paModel]",

@@ -13,8 +13,8 @@ import {
 } from "@angular/core";
 import { Product } from "./model/product.model";
 import { ViewRef } from "@angular/core/src/render3/view_ref";
-import { DiscountService } from "./discount.service";
-import { LogService, LOG_SERVICE, LogLevel, SpecialLogService } from "./log.service";
+import { DiscountService } from "./common/discount.service";
+import { LogService, LOG_SERVICE, LogLevel, SpecialLogService } from "./common/log.service";
 
 @Directive({
     selector: "table",

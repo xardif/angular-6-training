@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Input } from "@angular/core";
 import { Product } from "./model/product.model";
-import { DiscountService } from "./discount.service";
+import { DiscountService } from "./common/discount.service";
 
 @Component({
     selector: "paDiscountDisplay",
