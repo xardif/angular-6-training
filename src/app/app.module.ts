@@ -19,9 +19,6 @@ import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
 import { LogService, LOG_SERVICE, SpecialLogService, LogLevel } from "./log.service";
 
-let logger = new LogService();
-logger.minLogLevel = LogLevel.DEBUG;
-
 @NgModule({
     declarations: [
         ProductComponent,
@@ -42,7 +39,11 @@ logger.minLogLevel = LogLevel.DEBUG;
     imports: [BrowserModule, FormsModule, ReactiveFormsModule],
     providers: [{
       provide: LogService,
-      useValue: logger
+      useFactory: () => {
+        let logger = new LogService();
+        logger.minLogLevel = LogLevel.DEBUG;
+        return logger;
+      }
     }
     ],
     bootstrap: [ProductComponent]
