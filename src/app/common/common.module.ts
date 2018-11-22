@@ -18,7 +18,7 @@ import {
     PaValueDisplayDirective,
     VALUE_SERVICE
 } from "./valueDisplay.directive";
-import { ModelModule } from "../model/model.module";
+import { PaCellColorSwitchesDirective } from "./cellColorSwitches.directive";
 
 @NgModule({
     declarations: [
@@ -30,7 +30,8 @@ import { ModelModule } from "../model/model.module";
         PaCategoryFilterPipe,
         PaDiscountPipe,
         PaDiscountAmountDirective,
-        PaValueDisplayDirective
+        PaValueDisplayDirective,
+        PaCellColorSwitchesDirective
     ],
     providers: [
         { provide: VALUE_SERVICE, useValue: "Apples" },
@@ -46,7 +47,6 @@ import { ModelModule } from "../model/model.module";
             }
         }
     ],
-    imports: [ModelModule],
     exports: [
         PsiAttrDirective,
         PaModel,
@@ -56,7 +56,8 @@ import { ModelModule } from "../model/model.module";
         PaCategoryFilterPipe,
         PaDiscountPipe,
         PaDiscountAmountDirective,
-        PaValueDisplayDirective
+        PaValueDisplayDirective,
+        PaCellColorSwitchesDirective
     ]
 })
 export class CommonModule {}
