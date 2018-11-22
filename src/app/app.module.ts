@@ -40,7 +40,13 @@ import { LogService, LOG_SERVICE, SpecialLogService } from "./log.service";
     providers: [
         {
             provide: LOG_SERVICE,
-            useClass: SpecialLogService
+            useClass: LogService,
+            multi: true
+        },
+        {
+            provide: LOG_SERVICE,
+            useClass: SpecialLogService,
+            multi: true
         }
     ],
     bootstrap: [ProductComponent]

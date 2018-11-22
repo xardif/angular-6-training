@@ -14,7 +14,7 @@ import {
 import { Product } from "./product.model";
 import { ViewRef } from "@angular/core/src/render3/view_ref";
 import { DiscountService } from "./discount.service";
-import { LogService, LOG_SERVICE } from "./log.service";
+import { LogService, LOG_SERVICE, LogLevel } from "./log.service";
 
 @Directive({
     selector: "td[pa-price]",
@@ -24,12 +24,15 @@ export class PaDiscountAmountDirective {
     differ: KeyValueDiffer<any, any>;
 
     discountAmount: number;
+    logger: LogService;
 
     constructor(
         private discounter: DiscountService,
         private keyValueDiffers: KeyValueDiffers,
-        @Inject(LOG_SERVICE) private logger: LogService
-    ) {}
+        @Inject(LOG_SERVICE) private loggers: LogService[]
+    ) {
+        this.logger = this.loggers.find(l => l.minLogLevel == LogLevel.DEBUG);
+    }
 
     @Input("pa-price")
     originalPrice: number;

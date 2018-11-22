@@ -13,7 +13,7 @@ export const LOG_SERVICE = new InjectionToken("logger");
 //     providedIn: "root"
 // })
 export class LogService {
-    protected minLogLevel: LogLevel = LogLevel.INFO;
+    minLogLevel: LogLevel = LogLevel.INFO;
 
     logInfoMessage(message: string) {
         this.logMessage(LogLevel.INFO, message);
