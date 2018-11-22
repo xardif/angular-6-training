@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component, Output, EventEmitter, SkipSelf, Inject } from "@angular/core";
 import { Product } from "./product.model";
 import { Model } from "./repository.model";
 import { VALUE_SERVICE } from "./valueDisplay.directive";
@@ -13,7 +13,12 @@ import { VALUE_SERVICE } from "./valueDisplay.directive";
 export class ProductFormComponent {
     newProduct: Product = new Product();
 
-    constructor(private dataModel: Model) {}
+    constructor(
+        private dataModel: Model,
+        @Inject(VALUE_SERVICE) @SkipSelf() private serviceValue: string
+    ) {
+        console.log("===> " + serviceValue);
+    }
 
     submitForm(form: any) {
         if (form.valid) {
