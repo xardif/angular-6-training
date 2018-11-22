@@ -9,7 +9,9 @@ import {
     HostBinding,
     HostListener,
     Inject,
-    InjectionToken
+    InjectionToken,
+    Optional,
+    Host
 } from "@angular/core";
 
 export const VALUE_SERVICE = new InjectionToken("value_service");
@@ -18,8 +20,8 @@ export const VALUE_SERVICE = new InjectionToken("value_service");
     selector: "[paDisplayValue]"
 })
 export class PaValueDisplayDirective {
-    constructor(@Inject(VALUE_SERVICE) serviceValue: string) {
-        this.elementContent = serviceValue;
+    constructor(@Inject(VALUE_SERVICE) @Host() @Optional() serviceValue: string) {
+        this.elementContent = serviceValue || "No Value";
     }
 
     @HostBinding("textContent")
