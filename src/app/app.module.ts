@@ -24,6 +24,7 @@ import {
     SpecialLogService,
     LogLevel
 } from "./log.service";
+import { PaCellColorSwitchesDirective } from "./cellColorSwitches.directive";
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import {
         PaDiscountDisplayComponent,
         PaDiscountEditorComponent,
         PaDiscountPipe,
-        PaDiscountAmountDirective
+        PaDiscountAmountDirective,
+        PaCellColorSwitchesDirective
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule],
     providers: [
